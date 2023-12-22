@@ -12,9 +12,9 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        Fire();
+        Spawn();
     }
-    void Fire()
+    void Spawn()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
             Instantiate(block, spawn_Point.transform.position, spawn_Point.transform.rotation);
