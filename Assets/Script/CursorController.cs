@@ -34,7 +34,7 @@ public class CursorController : MonoBehaviour
         // 마우스 이동
         float x = Input.mousePosition.x - (Screen.width / 2);
         float y = Input.mousePosition.y - (Screen.height / 2);
-        tf_cursor.localPosition = new Vector2(x, y);
+        tf_cursor.localPosition = new Vector2(x+30, y-30);
 
         // 마우스 가두기 (범위 지정)
         float tmp_cursorPosX = tf_cursor.localPosition.x;
