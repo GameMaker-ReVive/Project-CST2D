@@ -25,4 +25,5 @@ public class CardData : ScriptableObject
     [Header("# Active Card Data")]
     public float damagePercent; // 데미지 수치
     public float healPercent; // 체력 수치
+
 }
