@@ -6,7 +6,7 @@ public class Skill : MonoBehaviour
 {
     public static Skill instance;
     public bool skillRange = false;
-
+    public GameObject cusor;
     void Awake(){
         instance=this;
 
