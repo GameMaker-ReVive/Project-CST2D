@@ -8,16 +8,33 @@ public class GameManager : MonoBehaviour
     public GameObject spawn_Point;
     public GameObject block;
     public GameObject[] card;
-    public Transform cardPar;
     public GameObject speedUp;
     public GameObject speedReset;
+    public PoolManager pool;
+    public Transform cardPar;
+    public Transform[] unitSpawnPoint;
     public bool isLive;
     public bool onCard = false;//카드 해금
 
     void Awake(){
         instance =this;
         StartCard();
-        
+    }
+
+
+    void Update()
+    {
+        // 플레이어 유닛 소환
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            pool.Get(0);
+        }
+
+        // 적 유닛 소환
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            pool.Get(1);
+        }
     }
 
     void Start()
