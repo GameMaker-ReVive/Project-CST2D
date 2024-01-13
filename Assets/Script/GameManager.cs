@@ -16,10 +16,19 @@ public class GameManager : MonoBehaviour
     public bool isLive;
     public bool onCard = false;//카드 해금
 
+    [Header("# Coin")]
+    public Text costCoin;
+    public Text ugCoin;
+    float timer = 0f;
+    int time = 0;
+    //임시
+    public bool enemy = false;
+
     void Awake(){
         instance =this;
         StartCard();
     }
+ 
 
 
     void Update()
@@ -35,12 +44,10 @@ public class GameManager : MonoBehaviour
         {
             pool.Get(1);
         }
+        Coin();
     }
 
-    void Start()
-    {
-        
-    }
+    
    
     public void ReDraw(){
         Transform[] childList = cardPar.GetComponentsInChildren<Transform>();
@@ -95,5 +102,38 @@ public class GameManager : MonoBehaviour
     {
         isLive = true;
         Time.timeScale = 1;
+    }
+
+    void Coin(){
+        //시간이 10초 경과시 마다 1에서 10사이의 코스트 획득
+        timer += Time.deltaTime;
+
+        if (timer >= 10f)
+        {
+            costCoin.text = (int.Parse(costCoin.text) + Random.Range(1, 11)).ToString();
+            timer = 0f;
+        }
+       
+
+    }
+
+    public void EnemyCoin(string enemType){
+        //죽인 개체의 등급에 따라 랜덤으로 코스트 증가
+        //에너미 코드에서 죽을 때 이 함수 실행 하면 될껄?
+        
+            switch(enemType){
+                case "nomar":
+                    ugCoin.text += Random.Range(1, 5).ToString();
+                    break;
+                case "middle":
+                    ugCoin.text += Random.Range(5, 10).ToString();
+                    break;
+                case "boss":
+                    ugCoin.text += Random.Range(10, 15).ToString();
+                    break;
+            }
+            
+        
+
     }
 }
