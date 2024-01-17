@@ -2806,6 +2806,7 @@ MonoBehaviour:
   onCard: 0
   costCoin: {fileID: 1833286760}
   ugCoin: {fileID: 2139925263}
+  enemy: 0
 --- !u!4 &1567127185
 Transform:
   m_ObjectHideFlags: 0
@@ -3493,6 +3494,7 @@ MonoBehaviour:
   onCard: 0
   costCoin: {fileID: 0}
   ugCoin: {fileID: 0}
+  enemy: 0
 --- !u!1 &1817680026
 GameObject:
   m_ObjectHideFlags: 0

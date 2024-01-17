@@ -49,4 +49,5 @@ public class Scanner : MonoBehaviour
 
         return result;
     }
+
 }
