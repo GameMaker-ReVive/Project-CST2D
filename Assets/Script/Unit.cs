@@ -105,7 +105,7 @@ public class Unit : MonoBehaviour
 
     void AttackRay()
     {
-        Collider2D attackTarget = Physics2D.OverlapBox(transform.position + new Vector3(moveDir.x * 0.6f, 0.6f, 0), new Vector2(0.5f, 1.2f), 0, attackLayer);
+        Collider2D attackTarget = Physics2D.OverlapBox(transform.position + new Vector3(moveDir.x * 60f, 60f, 0), new Vector2(50f, 120f), 0, attackLayer);
 
         if(attackTarget != null)
         {
