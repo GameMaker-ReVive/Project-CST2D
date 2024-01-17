@@ -72,20 +72,20 @@ public class Skill : MonoBehaviour
        
     }
 
-    // public void SkillStay(){
-    //     mouse.sprite = normal;
-    //     mouse.color = new Color(1,1,1,1f);
-    //     mouse.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-    //     Debug.Log("Skill Stay");
-    //     skillRange = false;
-    // }
+    public void SkillStay(){
+         mouse.sprite = normal;
+         mouse.color = new Color(1,1,1,1f);
+         mouse.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+         Debug.Log("Skill Stay");
+         skillRange = false;
+     }
 
-    // public void SkillGo(){
-    //     mouse.sprite = range;
-    //     mouse.transform.localScale += new Vector3(6.0f, 6.0f, 1.0f);
-    //     mouse.color = new Color(1,1,1,0.5f);
-    //     Debug.Log("Skill Go");
-    //     skillRange = true;
-    // }
+    public void SkillGo(){
+         mouse.sprite = range;
+         mouse.transform.localScale += new Vector3(6.0f, 6.0f, 1.0f);
+         mouse.color = new Color(1,1,1,0.5f);
+         Debug.Log("Skill Go");
+         skillRange = true;
+     }
 
 }

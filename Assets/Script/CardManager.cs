@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class CardManager : MonoBehaviour
 {
     Vector3 pos;
@@ -11,6 +11,18 @@ public class CardManager : MonoBehaviour
     void Update(){
         //CusorY();
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Skill.instance.SkillStay();
+        Debug.Log("Stay");
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Skill.instance.SkillGo();
+        Debug.Log("Go");
+    }
+
     void CusorY(){
         if(Skill.instance.skillCnt == 0)
             return;
