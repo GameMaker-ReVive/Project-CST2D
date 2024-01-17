@@ -28,14 +28,16 @@ public class Card : MonoBehaviour
         GetComponent<Button>().interactable = false;
     }
   
-    public void SkillUsing(){
-        string type = card.cardType.ToString();
-        switch(type){
-            case "rangeAttack":
+    public void SkillUsing(string name){
+        //string type = card.cardType.ToString();
+        switch(name){
+            case "RangeAttack":
                 
                 Skill.instance.skillRange = true;
+                
+                Skill.instance.OnRange();
                 Debug.Log("RANGE SKILL ATTACK");
-                GameManager.instance.ReDraw();
+                //GameManager.instance.ReDraw();
                 break;
             case "AttackDamage":
                 Debug.Log("AttackDamage");

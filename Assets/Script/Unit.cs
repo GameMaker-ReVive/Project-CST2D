@@ -63,13 +63,13 @@ public class Unit : MonoBehaviour
     {
         if (scanner.nearestTarget)
         {
-                // À§Ä¡ Â÷ÀÌ = Å¸°Ù À§Ä¡ - ³ªÀÇ À§Ä¡
-                Vector2 dirVec = (Vector2)scanner.nearestTarget.position - rigid.position; // ¹æÇâ
-                Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;  // ´ÙÀ½¿¡ °¡¾ßÇÒ À§Ä¡ÀÇ ¾ç
+                // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ = Å¸ï¿½ï¿½ ï¿½ï¿½Ä¡ - ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
+                Vector2 dirVec = (Vector2)scanner.nearestTarget.position - rigid.position; // ï¿½ï¿½ï¿½ï¿½
+                Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½
                 rigid.MovePosition(rigid.position + nextVec);
-                rigid.velocity = Vector2.zero; // ¹°¸® ¼Óµµ°¡ MovePosition ÀÌµ¿¿¡ ¿µÇâÀ» ÁÖÁö ¾Êµµ·Ï ¼Óµµ Á¦°Å
+                rigid.velocity = Vector2.zero; // ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ MovePosition ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
 
-                // °¡´Â ¹æÇâ¿¡ µû¶ó moveDir º¯°æ
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ moveDir ï¿½ï¿½ï¿½ï¿½
                 if (dirVec.x > 0)
                 {
                     renderer.flipX = true;
@@ -105,7 +105,7 @@ public class Unit : MonoBehaviour
 
     void AttackRay()
     {
-        Collider2D attackTarget = Physics2D.OverlapBox(transform.position + new Vector3(moveDir.x * 60f, 60f, 0), new Vector2(50f, 120f), 0, attackLayer);
+        Collider2D attackTarget = Physics2D.OverlapBox(transform.position + new Vector3(moveDir.x * 0.6f, 0.6f, 0), new Vector2(0.5f, 1.2f), 0, attackLayer);
 
         if(attackTarget != null)
         {
