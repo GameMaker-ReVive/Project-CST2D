@@ -3273,6 +3273,7 @@ GameObject:
   - component: {fileID: 1754877734}
   - component: {fileID: 1754877733}
   - component: {fileID: 1754877735}
+  - component: {fileID: 1754877736}
   m_Layer: 5
   m_Name: Stop
   m_TagString: Untagged
@@ -3393,6 +3394,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1754877736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754877731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9cd2c55a4021e4285a5aa2f61836ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1767907951
 GameObject:
   m_ObjectHideFlags: 0
@@ -3724,6 +3737,8 @@ GameObject:
   - component: {fileID: 1832776944}
   - component: {fileID: 1832776943}
   - component: {fileID: 1832776942}
+  - component: {fileID: 1832776945}
+  - component: {fileID: 1832776946}
   m_Layer: 5
   m_Name: ShopPanel
   m_TagString: Untagged
@@ -3814,6 +3829,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832776940}
   m_CullTransparentMesh: 1
+--- !u!114 &1832776945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832776940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9cd2c55a4021e4285a5aa2f61836ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1832776946
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832776940}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1833286758
 GameObject:
   m_ObjectHideFlags: 0
@@ -4263,7 +4335,6 @@ GameObject:
   - component: {fileID: 2047443353}
   - component: {fileID: 2047443354}
   - component: {fileID: 2047443355}
-  - component: {fileID: 2047443356}
   m_Layer: 5
   m_Name: UI Cursor
   m_TagString: cursor
@@ -4359,9 +4430,9 @@ MonoBehaviour:
   skillRange: 0
   skillCnt: 0
   skillStop: 1
-  mouse: {fileID: 0}
-  normal: {fileID: 0}
-  range: {fileID: 0}
+  mouse: {fileID: 2047443351}
+  normal: {fileID: 21300000, guid: 598b64a73ac8b034aaabe764627d2a69, type: 3}
+  range: {fileID: 21300000, guid: c6f0175823fd9bd41aa7bb4297f0a702, type: 3}
 --- !u!70 &2047443355
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4397,18 +4468,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
---- !u!114 &2047443356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047443349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb9cd2c55a4021e4285a5aa2f61836ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2061306759
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,8 +4879,8 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 141603182}
-  - {fileID: 166501281}
   - {fileID: 1767907952}
+  - {fileID: 166501281}
   - {fileID: 1567127185}
   - {fileID: 1392709174}
   - {fileID: 2031340985}
