@@ -1505,11 +1505,16 @@ MonoBehaviour:
   - {fileID: 7532553783525218530, guid: 8e40f4c0e9bb6084da9a82cc1a3631c3, type: 3}
   - {fileID: 1793038088601448268, guid: d911aa9f7389ddd47ad041d0cf51fee1, type: 3}
   - {fileID: 4260100231497648664, guid: 53864594237d1c643801cbd964b3f0fa, type: 3}
-  cardPar: {fileID: 86992073}
   speedUp: {fileID: 0}
   speedReset: {fileID: 0}
+  pool: {fileID: 0}
+  cardPar: {fileID: 86992073}
+  unitSpawnPoint: []
   isLive: 0
   onCard: 0
+  costCoin: {fileID: 0}
+  ugCoin: {fileID: 0}
+  enemy: 0
 --- !u!4 &1567127185
 Transform:
   m_ObjectHideFlags: 0
@@ -1820,11 +1825,16 @@ MonoBehaviour:
   spawn_Point: {fileID: 0}
   block: {fileID: 7951086473823585311, guid: 1b73851af2b8f0648b5740507f5eee23, type: 3}
   card: []
-  cardPar: {fileID: 0}
   speedUp: {fileID: 0}
   speedReset: {fileID: 0}
+  pool: {fileID: 0}
+  cardPar: {fileID: 0}
+  unitSpawnPoint: []
   isLive: 0
   onCard: 0
+  costCoin: {fileID: 0}
+  ugCoin: {fileID: 0}
+  enemy: 0
 --- !u!1 &1817680026
 GameObject:
   m_ObjectHideFlags: 0

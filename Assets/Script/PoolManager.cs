@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-    // ÇÁ¸®ÆÕ
+    public static PoolManager instance;
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public GameObject[] prefabs;
 
-    // Ç® ´ã´çÀ» ÇÏ´Â ¸®½ºÆ®µé
+    // Ç® ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½
     List<GameObject>[] pools;
 
     void Awake()
     {
+        instance = this;
+
         pools = new List<GameObject>[prefabs.Length];
 
         for (int i = 0; i < pools.Length; i++)
@@ -25,29 +28,29 @@ public class PoolManager : MonoBehaviour
         int ran;
         GameObject select = null;
 
-        // ¼±ÅÃÇÑ Ç®ÀÌ ³î°í (ºñÈ°¼ºÈ­ µÈ) ÀÖ´Â °ÔÀÓ ¿ÀºêÁ§Æ® Á¢±Ù
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç®ï¿½ï¿½ ï¿½ï¿½ï¿½ (ï¿½ï¿½È°ï¿½ï¿½È­ ï¿½ï¿½) ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
         foreach (GameObject item in pools[index])
         {
             if (!item.activeSelf)
             {
-                // ¹ß°ßÇÏ¸é select º¯¼ö¿¡ ÇÒ´ç
+                // ï¿½ß°ï¿½ï¿½Ï¸ï¿½ select ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½
                 select = item;
                 select.SetActive(true);
                 break;
             }
         }
 
-        // ¸ðµç ¿ÀºêÁ§Æ® »ç¿ë ÁßÀÏ ½Ã (¸ø Ã£¾ÒÀ» ¶§) ¿ÀºêÁ§Æ®¸¦ »õ·Î »ý¼ºÇØ¼­ select º¯¼ö¿¡ ÇÒ´ç
+        // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ (ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ select ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½
         if (select == null)
         {
             select = Instantiate(prefabs[index], transform);
-            // transform -> ¿ÀºêÁ§Æ® »ý¼ºÀ§Ä¡ (= ºÎ¸ð ¿ÀºêÁ§Æ® -> ÀÚ±âÀÚ½Å(PoolManager))
+            // transform -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ (= ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® -> ï¿½Ú±ï¿½ï¿½Ú½ï¿½(PoolManager))
 
-            // »ý¼ºµÈ ¿ÀºêÁ§Æ®´Â ÇØ´ç ¿ÀºêÁ§Æ® Ç® ¸®½ºÆ®¿¡ Ãß°¡
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® Ç® ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ß°ï¿½
             pools[index].Add(select);
         }
 
-        // ½ºÆù Æ÷ÀÎÆ®
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
         switch(index)
         {
             case 0:

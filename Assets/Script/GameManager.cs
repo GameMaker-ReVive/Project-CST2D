@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public Text ugCoin;
     float timer = 0f;
     int time = 0;
+    public float maxGameTime;
+    public float gameTime;
     //임시
     public bool enemy = false;
 
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        gameTime += Time.deltaTime;
         // 플레이어 유닛 소환
         if (Input.GetKeyDown(KeyCode.Q))
         {
