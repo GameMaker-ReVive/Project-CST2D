@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class CardManager : MonoBehaviour
+public class CardManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     
-
-    private void OnMouseEnter() {
+    public void OnPointerEnter(PointerEventData eventData)
+    {
         Skill.instance.SkillStay();
         Debug.Log("Stay");
     }
-    private void OnMouseExit() {
+    public void OnPointerExit(PointerEventData eventData)
+    {
         Skill.instance.SkillGo();
-        Debug.Log("Go");
+        Debug.Log("Exit");
     }
+
+  
 
     
 

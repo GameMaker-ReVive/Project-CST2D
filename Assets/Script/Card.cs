@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 public class Card : MonoBehaviour
 {
     public static Card instance;
@@ -34,7 +35,7 @@ public class Card : MonoBehaviour
             case "RangeAttack":
                 
                 Skill.instance.skillRange = true;
-                
+                Skill.instance.skillStop1 = true;
                 Skill.instance.OnRange();
                 Debug.Log("RANGE SKILL ATTACK");
                 //GameManager.instance.ReDraw();
@@ -75,6 +76,7 @@ public class Card : MonoBehaviour
         }
 
     }
+    
 
 
 }

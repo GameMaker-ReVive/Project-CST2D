@@ -8,7 +8,7 @@ public class Skill : MonoBehaviour
     public static Skill instance;
     public bool skillRange = false;
     public int skillCnt = 0;
-    public bool skillStop = true;
+    public bool skillStop1 = false;
 
     public Image mouse;
     public Sprite normal;
@@ -50,24 +50,13 @@ public class Skill : MonoBehaviour
     }
 
     public void OnRange(){
-        if(!skillRange)
-            return;
-        mouse.sprite = range;
-        mouse.transform.localScale += new Vector3(6.0f, 6.0f, 1.0f);
-        mouse.color = new Color(1,1,1,0.5f);
-        // if(skillCnt == 2){
-        //     mouse.sprite = normal;
-        //     mouse.color = new Color(1,1,1,1f);
-        //     mouse.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-        //     Debug.Log("Range Skill Cancel");
-        //     skillRange = false;
-        //     skillCnt = 0;
-        // }
-        // else if(skillCnt == 1){
-        //     mouse.sprite = range;
-        //     mouse.transform.localScale += new Vector3(6.0f, 6.0f, 1.0f);
-        //     mouse.color = new Color(1,1,1,0.5f);
-        // }
+        if(skillRange == true && skillStop1 == true){
+            Debug.Log("Skill Go2");
+            mouse.sprite = range;
+            mouse.transform.localScale += new Vector3(6.0f, 6.0f, 1.0f);
+            mouse.color = new Color(1,1,1,0.5f);
+        }
+       
         
        
     }
@@ -81,11 +70,10 @@ public class Skill : MonoBehaviour
      }
 
     public void SkillGo(){
-         mouse.sprite = range;
-         mouse.transform.localScale += new Vector3(6.0f, 6.0f, 1.0f);
-         mouse.color = new Color(1,1,1,0.5f);
+        
          Debug.Log("Skill Go");
          skillRange = true;
+         OnRange();
      }
 
 }
