@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Player Unit
-  - Enemy Unit
-  - 
-  - 
+  - PlayerUnit
+  - EnemyUnit
+  - FightPlayerUnit
+  - FightEnemyUnit
   - 
   - 
   - 
