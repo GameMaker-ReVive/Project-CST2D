@@ -33,7 +33,7 @@ public class Card : MonoBehaviour
         //string type = card.cardType.ToString();
         switch(name){
             case "RangeAttack":
-                
+                UiManager.instance.cardShop.SetActive(false);
                 Skill.instance.skillRange = true;
                 Skill.instance.skillStop1 = true;
                 Skill.instance.OnRange();

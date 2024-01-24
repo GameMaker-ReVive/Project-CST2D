@@ -15,6 +15,7 @@ public class UiManager : MonoBehaviour
     public GameObject speedReset;
     public Transform cardPar;
     public bool onCard = false;//카드 해금
+    public GameObject cardShop;
 
     [Header("# Coin")]
     public Text costCoin;

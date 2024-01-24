@@ -27,6 +27,7 @@ public class Skill : MonoBehaviour
             mouse.color = new Color(1,1,1,1f);
             mouse.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             Debug.Log("Range Skill Acivated");
+            UiManager.instance.cardShop.SetActive(true);
             UiManager.instance.ReDraw();
             skillRange = false;
             skillStop1 = false;
@@ -73,6 +74,7 @@ public class Skill : MonoBehaviour
         mouse.color = new Color(1,1,1,1f);
         mouse.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         Debug.Log("Range Skill Cancel");
+        UiManager.instance.cardShop.SetActive(true);
         skillRange = false;
         skillCnt = 0;
         skillStop1 = false;
