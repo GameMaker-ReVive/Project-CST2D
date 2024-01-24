@@ -35,8 +35,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -5, z: 0}
+<<<<<<< HEAD
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
+=======
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_ConstrainProportionsScale: 0
+>>>>>>> 1b82869b1500c6af169d8ebe2f9c1738ba35985d
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -80,7 +85,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2995921207297475355
 MonoBehaviour:
@@ -244,6 +249,7 @@ MonoBehaviour:
   AnimClip:
   - {fileID: 11400000, guid: 9aa9ff3994aaa13429ac7eb97c4b4d79, type: 2}
   - {fileID: 11400000, guid: 265c6ce8b3db35343b5b8da5fca24ac9, type: 2}
+<<<<<<< HEAD
 --- !u!114 &8163931733424385536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,3 +291,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   nearestTarget: {fileID: 0}
+=======
+>>>>>>> 1b82869b1500c6af169d8ebe2f9c1738ba35985d
