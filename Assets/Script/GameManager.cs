@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Transform[] unitSpawnPoint;
     public bool isLive;
     public bool onCard = false;//카드 해금
+    public Vector3 point;
 
     [Header("# Coin")]
     public Text costCoin;
@@ -28,24 +29,29 @@ public class GameManager : MonoBehaviour
         instance =this;
         StartCard();
     }
- 
+
 
 
     void Update()
     {
         // 플레이어 유닛 소환
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetMouseButtonDown(0))
         {
+            // 마우스 좌클릭 한 곳의 위치값
+            point = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
+                Input.mousePosition.y, -Camera.main.transform.position.z));
+
             pool.Get(0);
         }
 
         // 적 유닛 소환
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetMouseButtonDown(1))
         {
             pool.Get(1);
         }
         Coin();
     }
+
 
     
    
