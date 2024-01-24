@@ -28,24 +28,14 @@ public class Skill : MonoBehaviour
             Debug.Log("Range Skill Acivated");
             GameManager.instance.ReDraw();
             skillRange = false;
-            
+            skillStop1 = false;
 
         }
         if(Input.GetMouseButtonDown(1) && skillRange==true ){
-            mouse.sprite = normal;
-            mouse.color = new Color(1,1,1,1f);
-            mouse.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-            Debug.Log("Range Skill Cancel");
-            skillRange = false;
-            skillCnt = 0;
+            SkillCancel();
         }
         if(Input.GetKeyDown(KeyCode.Escape) && skillRange==true ){
-            mouse.sprite = normal;
-            mouse.color = new Color(1,1,1,1f);
-            mouse.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-            Debug.Log("Range Skill Cancel");
-            skillRange = false;
-            skillCnt = 0;
+            SkillCancel();
         }
     }
 
@@ -53,7 +43,7 @@ public class Skill : MonoBehaviour
         if(skillRange == true && skillStop1 == true){
             Debug.Log("Skill Go2");
             mouse.sprite = range;
-            mouse.transform.localScale += new Vector3(6.0f, 6.0f, 1.0f);
+            mouse.transform.localScale = new Vector3(6.0f, 6.0f, 1.0f);
             mouse.color = new Color(1,1,1,0.5f);
         }
        
@@ -76,4 +66,13 @@ public class Skill : MonoBehaviour
          OnRange();
      }
 
+    public void SkillCancel(){
+        mouse.sprite = normal;
+        mouse.color = new Color(1,1,1,1f);
+        mouse.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        Debug.Log("Range Skill Cancel");
+        skillRange = false;
+        skillCnt = 0;
+        skillStop1 = false;
+    }
 }

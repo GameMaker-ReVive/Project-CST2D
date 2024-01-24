@@ -16,7 +16,9 @@ public class CardManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         Debug.Log("Exit");
     }
 
-  
+    public void SelectCancel(){
+        Skill.instance.SkillCancel();
+    }
 
     
 
