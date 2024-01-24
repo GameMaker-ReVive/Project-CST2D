@@ -6,11 +6,11 @@ public class Wave : MonoBehaviour
 {
     public GameObject elfEnemy;
     float timeWave = 0f;
-    void Update(){
+/*    void Update(){
         Summons();
-    }
+    }*/
 
-    public void Summons(){
+/*    public void Summons(){
         timeWave += Time.deltaTime;
 
         if(timeWave >= 10f ){
@@ -24,5 +24,5 @@ public class Wave : MonoBehaviour
 
         }
     }
-
+*/
 }
