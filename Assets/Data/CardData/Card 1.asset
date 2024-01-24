@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8461c6f9136884290c078c9ca8d734, type: 3}
+  m_Name: Card 1
+  m_EditorClassIdentifier: 
+  cardType: 0
+  cardId: 0
+  cardName: "\uACF5\uACA9\uB825 \uC99D\uAC00x2"
+  itemDes: "\uACF5\uACA9\uB825 2\uBC30 \uC99D\uAC00"
+  cardSprite: {fileID: -457573784, guid: 78b559160f65ac44887a227d2dafb009, type: 3}
+  upValue: 4
+  damagePercent: 0
+  healPercent: 0
