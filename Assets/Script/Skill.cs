@@ -9,6 +9,7 @@ public class Skill : MonoBehaviour
     public bool skillRange = false;
     public int skillCnt = 0;
     public bool skillStop1 = false;
+    public bool uiMenu = false;
 
     public Image mouse;
     public Sprite normal;
@@ -60,10 +61,11 @@ public class Skill : MonoBehaviour
      }
 
     public void SkillGo(){
-        
-         Debug.Log("Skill Go");
-         skillRange = true;
-         OnRange();
+        if(uiMenu)
+            return;
+        Debug.Log("Skill Go");
+        skillRange = true;
+        OnRange();
      }
 
     public void SkillCancel(){

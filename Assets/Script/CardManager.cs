@@ -20,6 +20,12 @@ public class CardManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         Skill.instance.SkillCancel();
     }
 
+  
+
+    public void GameContunue(){
+        Skill.instance.SkillGo();
+        Debug.Log("GameReStart");
+    }
     
 
     

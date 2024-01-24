@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject block;
     public GameObject[] card;
     public GameObject speedUp;
+    public int gameSpeed=1;
+    public Text speedText;
     public GameObject speedReset;
     public PoolManager pool;
     public Transform cardPar;
@@ -80,9 +82,27 @@ public class GameManager : MonoBehaviour
 
     public void SpeedUp()
     {
-        speedUp.gameObject.SetActive(false);
-        speedReset.gameObject.SetActive(true);
-        Time.timeScale = 2;
+        gameSpeed += 1;
+        if(gameSpeed >= 4)
+            gameSpeed = 1;
+        switch(gameSpeed){
+            case 1:
+                Time.timeScale = 1;
+                speedText.text = "X1";
+                Debug.Log("nomarSpeed");
+                break;
+            case 2:
+                Time.timeScale = 2;
+                speedText.text = "X2";
+                Debug.Log("highSpeed");
+                break;
+            case 3:
+                Time.timeScale = 3;
+                speedText.text = "X3";
+                Debug.Log("hyperSpeed");
+                break;
+        }
+        
     }
 
     public void SpeedReset()

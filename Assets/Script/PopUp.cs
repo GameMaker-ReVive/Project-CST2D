@@ -10,16 +10,24 @@ public class PopUp : MonoBehaviour
     {
         
     }
+    public void PopupShow(){
+        pop.gameObject.SetActive(true);
+        Skill.instance.SkillStay();
+        Skill.instance.uiMenu = true;
+        Debug.Log("StopMenu");
+        Show();
+    }
 
     public void Show()
     {
-        pop.gameObject.SetActive(true);
+        
         GameManager.instance.Stop();
     }
 
     public void Hide()
     {
         pop.gameObject.SetActive(false);
+        Skill.instance.uiMenu = false;
         GameManager.instance.Resume();
     }
 }
