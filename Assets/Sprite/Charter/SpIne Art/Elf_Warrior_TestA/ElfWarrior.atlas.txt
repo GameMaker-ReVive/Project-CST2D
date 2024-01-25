@@ -1,0 +1,56 @@
+ElfWarrior.png
+	size: 1962, 883
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+apron
+	bounds: 214, 21, 246, 192
+	rotate: 90
+apron shadow
+	bounds: 408, 21, 246, 188
+	rotate: 90
+armLL
+	bounds: 2, 2, 210, 265
+armRR
+	bounds: 557, 358, 523, 505
+	rotate: 90
+body1
+	bounds: 1264, 25, 371, 302
+	rotate: 90
+body2
+	bounds: 1705, 82, 210, 203
+bodyObj
+	bounds: 1109, 30, 341, 153
+	rotate: 90
+face1
+	bounds: 598, 3, 509, 353
+	offsets: 0, 25, 637, 378
+face2
+	bounds: 1508, 423, 156, 35
+face3
+	bounds: 1307, 404, 199, 53
+face4
+	bounds: 1064, 373, 84, 54
+	rotate: 90
+hair1
+	bounds: 2, 269, 612, 553
+	rotate: 90
+hair2
+	bounds: 1064, 459, 422, 387
+	rotate: 90
+hair2 shadow
+	bounds: 1453, 460, 421, 335
+	offsets: 0, 19, 421, 354
+	rotate: 90
+legL
+	bounds: 1790, 413, 167, 266
+legR
+	bounds: 1568, 21, 135, 274
+ribbon1
+	bounds: 1120, 398, 185, 59
+ribbon2
+	bounds: 1568, 297, 217, 124
+ribbon3
+	bounds: 1787, 287, 138, 124
+wing
+	bounds: 1790, 681, 170, 200
