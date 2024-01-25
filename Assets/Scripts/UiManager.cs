@@ -14,7 +14,7 @@ public class UiManager : MonoBehaviour
     public Text speedText;
     public GameObject speedReset;
     public Transform cardPar;
-    public bool onCard = false;//Ä«µå ÇØ±Ý
+    public bool onCard = false;//Ä«ï¿½ï¿½ ï¿½Ø±ï¿½
     public GameObject cardShop;
 
     [Header("# Coin")]
@@ -22,7 +22,7 @@ public class UiManager : MonoBehaviour
     public Text ugCoin;
     float timer = 0f;
     int time = 0;
-    //ÀÓ½Ã
+    //ï¿½Ó½ï¿½
     public bool enemy = false;
 
     void Awake()
@@ -59,14 +59,14 @@ public class UiManager : MonoBehaviour
 
 
 
-        for (int index = 0; index < 5; index++)
+        for (int index = 0; index < 3; index++)
         {
             int ran = Random.Range(0, card.Length);
             GameObject myInstance = Instantiate(card[ran], cardPar);
-            if (!onCard && index == 4)
-            {
-                Card.instance.BlackCard();
-            }
+            // if (!onCard && index == 4)
+            // {
+            //     Card.instance.BlackCard();
+            // }
 
         }
 
@@ -117,7 +117,7 @@ public class UiManager : MonoBehaviour
 
     void Coin()
     {
-        //½Ã°£ÀÌ 10ÃÊ °æ°ú½Ã ¸¶´Ù 1¿¡¼­ 10»çÀÌÀÇ ÄÚ½ºÆ® È¹µæ
+        //ï¿½Ã°ï¿½ï¿½ï¿½ 10ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½Æ® È¹ï¿½ï¿½
         timer += Time.deltaTime;
 
         if (timer >= 10f)
@@ -131,8 +131,8 @@ public class UiManager : MonoBehaviour
 
     public void EnemyCoin(string enemType)
     {
-        //Á×ÀÎ °³Ã¼ÀÇ µî±Þ¿¡ µû¶ó ·£´ýÀ¸·Î ÄÚ½ºÆ® Áõ°¡
-        //¿¡³Ê¹Ì ÄÚµå¿¡¼­ Á×À» ¶§ ÀÌ ÇÔ¼ö ½ÇÇà ÇÏ¸é µÉ²¬?
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½Þ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+        //ï¿½ï¿½ï¿½Ê¹ï¿½ ï¿½Úµå¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½ ï¿½É²ï¿½?
 
         switch (enemType)
         {
