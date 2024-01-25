@@ -10,6 +10,7 @@ public class CardManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         Skill.instance.SkillStay();
         Debug.Log("Stay");
     }
+
     public void OnPointerExit(PointerEventData eventData)
     {
         Skill.instance.SkillGo();

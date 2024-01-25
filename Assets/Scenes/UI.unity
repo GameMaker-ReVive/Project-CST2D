@@ -496,6 +496,7 @@ MonoBehaviour:
   speedReset: {fileID: 0}
   cardPar: {fileID: 1832776941}
   onCard: 0
+  cardShop: {fileID: 237532810}
   costCoin: {fileID: 1833286760}
   ugCoin: {fileID: 2139925263}
   enemy: 0
