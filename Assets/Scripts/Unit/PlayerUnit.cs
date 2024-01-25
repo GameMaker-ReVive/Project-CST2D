@@ -66,13 +66,13 @@ public class PlayerUnit : UnitBase
         attackTime = 0f;
     }
 
-    void Scanner()
+    void Scanner() // + Move
     {
         if (scanner.nearestTarget)
         {
             // 위치 차이 = 타겟 위치 - 나의 위치
             disVec = (Vector2)scanner.nearestTarget.position - rigid.position;
-            Enemy enemyLogic = scanner.nearestTarget.GetComponent<Enemy>();
+            EnemyUnit enemyLogic = scanner.nearestTarget.GetComponent<EnemyUnit>();
 
             // 이동
             nextVec = disVec.normalized * speed * Time.deltaTime;
@@ -109,7 +109,7 @@ public class PlayerUnit : UnitBase
 
         if (attackTarget != null)
         {
-            Enemy targetLogic = attackTarget.gameObject.GetComponent<Enemy>();
+            EnemyUnit targetLogic = attackTarget.gameObject.GetComponent<EnemyUnit>();
 
             unitState = UnitState.Fight;
             startMoveFinish = true;
@@ -121,7 +121,7 @@ public class PlayerUnit : UnitBase
             {
                 StartCoroutine("Attack");
                 attackTime = 0;
-                unitState = UnitState.Fight;
+                unitState = UnitState.Attack;
             }
 
             gameObject.layer = 8;

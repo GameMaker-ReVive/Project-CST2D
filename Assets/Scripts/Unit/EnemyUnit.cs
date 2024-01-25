@@ -8,7 +8,6 @@ public class EnemyUnit : UnitBase
     Scanner scanner;
     Rigidbody2D rigid;
     Animator anim;
-    SpriteRenderer renderer;
 
     public LayerMask attackLayer;
     Vector2 moveDir; //  방향
@@ -19,7 +18,6 @@ public class EnemyUnit : UnitBase
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        renderer = GetComponent<SpriteRenderer>();
         scanner = GetComponentInChildren<Scanner>();
 
         unitState = UnitState.Move;
@@ -41,19 +39,19 @@ public class EnemyUnit : UnitBase
             // 가는 방향에 따라 Sprite 방향 변경
             if (disVec.x > 0)
             {
-                renderer.flipX = true;
+                transform.localScale = new Vector3(1f, 1f, 1f);
                 moveDir = Vector2.right;
             }
             else if (disVec.x < 0)
             {
-                renderer.flipX = false;
+                transform.localScale = new Vector3(-1f, 1f, 1f);
                 moveDir = Vector2.left;
             }
         }
         else
         {
-            disVec = Vector2.left;
-            renderer.flipX = false;
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+            moveDir = Vector2.left;
         }
 
         // 이동
