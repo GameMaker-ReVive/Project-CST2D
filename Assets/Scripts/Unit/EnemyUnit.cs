@@ -39,23 +39,23 @@ public class EnemyUnit : UnitBase
             // 가는 방향에 따라 Sprite 방향 변경
             if (disVec.x > 0)
             {
-                transform.localScale = new Vector3(1f, 1f, 1f);
+                transform.localScale = new Vector3(-3f, 3f, 3f);
                 moveDir = Vector2.right;
             }
             else if (disVec.x < 0)
             {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
+                transform.localScale = new Vector3(3f, 3f, 3f);
                 moveDir = Vector2.left;
             }
         }
         else
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-            moveDir = Vector2.left;
+            transform.localScale = new Vector3(3f, 3f, 3f);
+            disVec = Vector2.left;
         }
 
         // 이동
-        nextVec = disVec.normalized * speed * Time.fixedDeltaTime;
+        nextVec = disVec.normalized * speed * Time.deltaTime;
         rigid.MovePosition(rigid.position + nextVec);
         rigid.velocity = Vector2.zero; // 물리 속도가 MovePosition 이동에 영향을 주지 않도록 속도 제거
         unitState = UnitState.Move;
@@ -65,7 +65,7 @@ public class EnemyUnit : UnitBase
 
     void AttackRay()
     {
-        Collider2D attackTarget = Physics2D.OverlapBox(transform.position + new Vector3(moveDir.x * 0.45f, 0.3f, 0), new Vector2(0.3f, 0.5f), 0, attackLayer);
+        Collider2D attackTarget = Physics2D.OverlapBox(transform.position + new Vector3(moveDir.x * 1.5f, 0.6f, 0), new Vector2(1.5f, 1.2f), 0, attackLayer);
 
         if (attackTarget != null)
         {
@@ -89,7 +89,7 @@ public class EnemyUnit : UnitBase
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position + new Vector3(moveDir.x * 0.45f, 0.3f, 0), new Vector2(0.3f, 0.5f));
+        Gizmos.DrawWireCube(transform.position + new Vector3(moveDir.x * 1.5f, 0.6f, 0), new Vector2(1.5f, 1.2f));
     }
 
 }
