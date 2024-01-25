@@ -2994,6 +2994,7 @@ MonoBehaviour:
   - {fileID: 119991227}
   - {fileID: 1385739722}
   point: {x: 0, y: 0, z: 0}
+  summonAtker: 0
 --- !u!4 &1571525322
 Transform:
   m_ObjectHideFlags: 0
@@ -4458,6 +4459,8 @@ MonoBehaviour:
   mouse: {fileID: 2047443351}
   normal: {fileID: 21300000, guid: 598b64a73ac8b034aaabe764627d2a69, type: 3}
   range: {fileID: 21300000, guid: 2a5df7d9cb12a0a4293b914eecb6cfa7, type: 3}
+  unitPointer: {fileID: 21300000, guid: 59fd1ac61ebc67d4a81eb96bfdd0ab0a, type: 3}
+  mouseType: 0
 --- !u!4 &2031340985
 Transform:
   m_ObjectHideFlags: 0
@@ -4665,6 +4668,8 @@ MonoBehaviour:
   mouse: {fileID: 2047443351}
   normal: {fileID: 21300000, guid: 598b64a73ac8b034aaabe764627d2a69, type: 3}
   range: {fileID: 21300000, guid: 2a5df7d9cb12a0a4293b914eecb6cfa7, type: 3}
+  unitPointer: {fileID: 21300000, guid: 59fd1ac61ebc67d4a81eb96bfdd0ab0a, type: 3}
+  mouseType: 0
 --- !u!70 &2047443355
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
