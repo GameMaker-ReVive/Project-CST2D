@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     public Vector3 point;
 
+    [Header("# Unit Setting")]
+    public int summonAtker = 0;
+
     void Awake()
     {
         instance = this;
@@ -21,20 +24,29 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-        // 플레이어 유닛 소환
-        if (Input.GetMouseButtonDown(0))
+       
+    }
+
+    public void SummonUnit(){
+        
+       
+        if (summonAtker == 1)
         {
-            // 마우스 좌클릭 한 곳의 위치값
+            
             point = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
                 Input.mousePosition.y, -Camera.main.transform.position.z));
 
             pool.Get(0);
+            UiManager.instance.ReDraw();
+            Skill.instance.mouseType = 0;
+            summonAtker = 0;
         }
 
-        // 적 유닛 소환
-        if (Input.GetMouseButtonDown(1))
+       
+        if (Input.GetMouseButtonDown(0) && summonAtker == 5)
         {
-            pool.Get(1);
+            pool.Get(0);
+            
         }
     }
 }

@@ -41,8 +41,11 @@ public class Card : MonoBehaviour
                 //GameManager.instance.ReDraw();
                 break;
             case "AttackDamage":
+                GameManager.instance.summonAtker = 1;
+                Skill.instance.skillStop1 = true;
+                Skill.instance.SummonSkill();
                 Debug.Log("AttackDamage");
-                UiManager.instance.ReDraw();
+                
                 break;
             case "AttackSpeed":
                 Debug.Log("AttackSpeed");

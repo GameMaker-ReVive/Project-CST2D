@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class CardManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CardManager1 : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     
     public void OnPointerEnter(PointerEventData eventData)
@@ -10,10 +10,15 @@ public class CardManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         Skill.instance.SkillStay();
         Debug.Log("Stay");
     }
-
     public void OnPointerExit(PointerEventData eventData)
     {
-        Skill.instance.SkillGo();
+        if(Skill.instance.mouseType==1){
+            Skill.instance.SkillGo();
+        }else if(Skill.instance.mouseType==2){
+            Skill.instance.UnitSkillGo();
+        }
+        
+    
         Debug.Log("Exit");
     }
 
@@ -24,7 +29,12 @@ public class CardManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
   
 
     public void GameContunue(){
-        Skill.instance.SkillGo();
+        if(Skill.instance.mouseType==1){
+            Skill.instance.SkillGo();
+        }
+        else if(Skill.instance.mouseType==2){
+            Skill.instance.UnitSkillGo();
+        }
         Debug.Log("GameReStart");
     }
     
