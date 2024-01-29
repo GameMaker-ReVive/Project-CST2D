@@ -111,17 +111,20 @@ public class PlayerUnit : UnitBase
         {
             Enemy targetLogic = attackTarget.gameObject.GetComponent<Enemy>();
 
-            unitState = UnitState.Fight;
+            if (unitState != UnitState.Attack)
+            {
+                unitState = UnitState.Fight;
+            }
+
             startMoveFinish = true;
 
             // 적이 인식되면 attackTime 증가 및 공격 함수 실행
             attackTime += Time.deltaTime;
 
-            if(attackTime >= unitData.AttackTime)
+            if (attackTime >= unitData.AttackTime && unitState != UnitState.Attack)
             {
-                StartCoroutine("Attack");
                 attackTime = 0;
-                unitState = UnitState.Fight;
+                StartCoroutine("Attack");
             }
 
             gameObject.layer = 8;
@@ -157,10 +160,12 @@ public class PlayerUnit : UnitBase
                 animIndex = 1;
                 break;
             case UnitState.Fight:
+                Debug.Log("Fight Animation");
                 _AnimState = AnimState.Idle;
                 animIndex = 0;
                 break;
             case UnitState.Attack:
+                Debug.Log("Attack Animation");
                 break;
             case UnitState.Damaged:
                 break;
@@ -173,11 +178,14 @@ public class PlayerUnit : UnitBase
         _AsyncAnimation(AnimClip[animIndex], true, 1f);
     }
 
-    void Attack()
+    IEnumerator Attack()
     {
         Debug.Log("Attack");
-
         unitState = UnitState.Attack;
+
+        yield return new WaitForSeconds(3.5f);
+
+        unitState = UnitState.Fight;
     }
 
     void Damaged()
