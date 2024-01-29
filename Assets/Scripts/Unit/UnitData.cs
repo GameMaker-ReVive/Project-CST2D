@@ -27,6 +27,11 @@ public class UnitData : ScriptableObject
     private float attackTime;
     public float AttackTime { get { return attackTime; } }
 
+    [SerializeField] // 유닛 공속 딜레이 # 나중에 어택 딜레이로 바꿀거임
+    private float delayTime;
+    public float DelayTime { get { return delayTime; } }
+
+
 
     //[Header("# Level State")]
 

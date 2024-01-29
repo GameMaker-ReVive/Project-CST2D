@@ -168,10 +168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ce3a6ed232d6e4dbfe8763f9119011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonAnimation: {fileID: 0}
+  skeletonAnimation: {fileID: 5308801266687709445}
   AnimClip:
-  - {fileID: 11400000, guid: 9aa9ff3994aaa13429ac7eb97c4b4d79, type: 2}
-  - {fileID: 11400000, guid: 265c6ce8b3db35343b5b8da5fca24ac9, type: 2}
+  - {fileID: 11400000, guid: 76be9d18136821d42a2062c8baae9573, type: 2}
+  - {fileID: 11400000, guid: cceecb1314dc76d4e9e8792d553b60e8, type: 2}
+  - {fileID: 11400000, guid: 096f5efe95dccfa4ab36f3d28a76611a, type: 2}
 --- !u!114 &7630191266835058422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,10 +195,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 640
   unitData: {fileID: 11400000, guid: b206c7258c135fa4aaa4b9aaa597e48d, type: 2}
-  skeletonAnimation: {fileID: 0}
+  skeletonAnimation: {fileID: 5308801266687709445}
   AnimClip:
-  - {fileID: 11400000, guid: 9aa9ff3994aaa13429ac7eb97c4b4d79, type: 2}
-  - {fileID: 11400000, guid: 265c6ce8b3db35343b5b8da5fca24ac9, type: 2}
+  - {fileID: 11400000, guid: 76be9d18136821d42a2062c8baae9573, type: 2}
+  - {fileID: 11400000, guid: cceecb1314dc76d4e9e8792d553b60e8, type: 2}
+  - {fileID: 11400000, guid: 096f5efe95dccfa4ab36f3d28a76611a, type: 2}
 --- !u!114 &7200533235678552754
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,4 +12,5 @@ public class UnitBase : MonoBehaviour
     public float speed;
     public float power;
     public float attackTime;
+    public float delayTime;
 }

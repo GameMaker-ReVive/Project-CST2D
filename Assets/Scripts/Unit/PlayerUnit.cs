@@ -64,6 +64,7 @@ public class PlayerUnit : UnitBase
         speed = unitData.Speed;
         power = unitData.Power;
         attackTime = 0f;
+        delayTime = 0f;
     }
 
     void Scanner() // + Move
@@ -111,17 +112,20 @@ public class PlayerUnit : UnitBase
         {
             EnemyUnit targetLogic = attackTarget.gameObject.GetComponent<EnemyUnit>();
 
-            unitState = UnitState.Fight;
+            if (unitState != UnitState.Attack)
+            {
+                unitState = UnitState.Fight;
+            }
+
             startMoveFinish = true;
 
             // 적이 인식되면 attackTime 증가 및 공격 함수 실행
             attackTime += Time.deltaTime;
 
-            if(attackTime >= unitData.AttackTime)
+            if (attackTime >= unitData.AttackTime && unitState != UnitState.Attack)
             {
-                StartCoroutine("Attack");
                 attackTime = 0;
-                unitState = UnitState.Attack;
+                StartCoroutine("Attack");
             }
 
             gameObject.layer = 8;
@@ -161,6 +165,8 @@ public class PlayerUnit : UnitBase
                 animIndex = 0;
                 break;
             case UnitState.Attack:
+                _AnimState = AnimState.Attack1;
+                animIndex = 2;
                 break;
             case UnitState.Damaged:
                 break;
@@ -173,11 +179,17 @@ public class PlayerUnit : UnitBase
         _AsyncAnimation(AnimClip[animIndex], true, 1f);
     }
 
-    void Attack()
+    IEnumerator Attack()
     {
-        Debug.Log("Attack");
-
         unitState = UnitState.Attack;
+
+        yield return new WaitForSeconds(2f);
+
+        Debug.Log("Attack"+attackTime);
+
+        yield return new WaitForSeconds(1.5f);
+
+        unitState = UnitState.Fight;
     }
 
     void Damaged()
@@ -248,6 +260,9 @@ public class PlayerUnit : UnitBase
                 break;
             case AnimState.Run:
                 _AsyncAnimation(AnimClip[(int)AnimState.Run], true, 1f);
+                break;
+            case AnimState.Attack1:
+                _AsyncAnimation(AnimClip[(int)AnimState.Attack1], true, 1f);
                 break;
         }
 

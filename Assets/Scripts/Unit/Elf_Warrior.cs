@@ -12,7 +12,7 @@ public class Elf_Warrior : MonoBehaviour
     //애니메이션에 대한 Enum
     public enum AnimState
     {
-        Idle,Run
+        Idle,Run,Attack1,Attack2,Dead
     }
 
     //현재 애니메이션 처리가 무엇인지에 대한 변수

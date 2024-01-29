@@ -3616,7 +3616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 109126022948136108, guid: 0d1c08539dd0ea748b052c52a28e9d83, type: 3}
+  - {fileID: 5158371797861409175, guid: 8a29a296ca0b21344a740ceef1ad1422, type: 3}
   - {fileID: 1463392086428580, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
 --- !u!4 &1759708689
 Transform:

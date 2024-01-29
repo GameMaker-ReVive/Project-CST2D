@@ -16,4 +16,5 @@ MonoBehaviour:
   health: 10
   speed: 8
   power: 5
-  attackTime: 1.2
+  attackTime: 3
+  delayTime: 0
