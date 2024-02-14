@@ -191,6 +191,7 @@ MonoBehaviour:
   speed: 0
   power: 0
   attackTime: 0
+  delayTime: 0
   attackLayer:
     serializedVersion: 2
     m_Bits: 640

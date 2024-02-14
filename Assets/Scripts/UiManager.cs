@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,9 +14,16 @@ public class UiManager : MonoBehaviour
     public int gameSpeed = 1;
     public Text speedText;
     public GameObject speedReset;
+    [Header("#Card")]
     public Transform cardPar;
     public bool onCard = false;//ī�� �ر�
     public GameObject cardShop;
+    public GameObject shop;
+    private bool shopUp = true;
+    private float shopTime;
+    public float duration = 1f;
+    private Vector3 startPosition;
+    private Vector3 targetPosition;
 
     [Header("# Coin")]
     public Text costCoin;
@@ -36,6 +44,7 @@ public class UiManager : MonoBehaviour
     void Update()
     {
         Coin();
+        ShopDown();
     }
 
 
@@ -150,5 +159,44 @@ public class UiManager : MonoBehaviour
 
 
     }
+    public void ShopDown()
+    {
+        if(shopUp==false) shopTime += Time.deltaTime;
 
+        if(shopTime >= 6f && !shopUp)
+        {
+            startPosition = shop.transform.position;
+            targetPosition = startPosition + Vector3.down * 140; // 시작 위치에서 y축으로 100만큼 이동한 위치
+            StartCoroutine(MoveShop());
+            shopUp = true;
+            shopTime = 0;
+            Debug.Log("down");
+        }
+    }
+    public void ShopUp()
+    {
+        if (!shopUp)
+            return;
+
+        Debug.Log("up");
+        startPosition = shop.transform.position;
+        targetPosition = startPosition + Vector3.up * 140; // 시작 위치에서 y축으로 100만큼 이동한 위치
+        StartCoroutine(MoveShop());
+        shopUp = false;
+
+    }
+    IEnumerator MoveShop()
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            shop.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
+            yield return null;
+        }
+
+        // 이동 완료 후 최종 위치를 보정
+        shop.transform.position = targetPosition;
+    }
 }
